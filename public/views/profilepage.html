@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="Login">
+<head>
+	<title>Profile Page</title>
+	<script src="https://code.angularjs.org/1.5.1/angular.min.js"></script>
+        <script type="text/javascript" src="../js/scripting1.js"></script>
+		<script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+</head>
+<body ng-controller="gallery" >
+<table>
+		<tr>
+	<th>Name</th>
+	<th>Email</th>
+	<th>UserName</th>
+	<th>Phone No.</th>
+	
+	</tr>
+
+	<tr ng-repeat="y in profile">
+		<td>{{y.name}}</td>
+		<td>{{y.email}}</td>
+		<td>{{y.username}}</td>
+		<td>{{y.phoneNo}}</td>
+		<!--<td ng-bind="naina.name"></td>
+		<td ng-bind="naina.price"></td>-->
+	</tr>
+	</table>
+</body>
+</html>

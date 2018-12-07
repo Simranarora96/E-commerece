@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.1/angular.min.js"></script>
+        <script type="text/javascript" src="../js/scripting1.js"></script>
+		<script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script> 
+
+</head>
+<body>
+<div ng-app="Login" ng-controller="signin">
+<h1>Login page</h1>
+<form>
+	Username:<input type="text" ng-model="user.username" required>
+	<br> <br>
+	Password: <input type="password" ng-model="user.password" required>
+	<br>
+	<input type="button" value="submit" ng-click="submit()">
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="Login">
+<head>
+	<title>Gallery</title>
+		<script src="https://code.angularjs.org/1.5.1/angular.min.js"></script>
+        <script type="text/javascript" src="../js/scripting1.js"></script>
+		<script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script> 
+</head>
+
+<body ng-controller="gallery" >
+<h1>Gallery page</h1>
+
+
+<h2>welcome {{try}} </h2>
+<!-- aise karna hai product listing gandu
+<div >tatti {{products[1].name}}</div>-->
+
+
+
+<div>
+
+ <p>
+        Search:
+        <input ng-model="$ctrl.query" />
+      </p>
+
+      <p>
+        Sort by:
+        <select ng-model="$ctrl.orderProp">
+          <option value="name">Alphabetical</option>
+          <option value="price">Price</option>
+          <option value="productId">Product Id</option>
+        </select>
+      </p>
+<table >
+	<tr>
+	<th>Select</th>
+	<th>ProductId</th>
+	<th>Name</th>
+	<th>Price</th>
+	
+	</tr>
+	<tr ng-repeat="x in products| filter:$ctrl.query | orderBy:$ctrl.orderProp">
+    <td><input type="checkbox" ng-model="check" ng-true-value="1" ng-false-value="0" value="{{x.productId}}" ng-checked="x.isRowSelected" ng-click="select(x.productId,check)" /></td>
+		<td>{{x.productId}}</td>
+		<td>{{x.name}}</td>
+		<td>{{x.price}}</td>
+	</tr>
+	</table>
+	<form>
+		<input type="button" name="Add to cart" value="Add to Cart" ng-click="update()">
+		<input type="button" name="Show cart" value="Show Cart" ng-click="cart()">
+	</form>
+
+	<table>
+		<tr>
+	<th>Select</th>
+	<th>ProductId</th>
+	<th>Name</th>
+	<th>Price</th>
+	
+	</tr>
+
+	<tr ng-repeat="y in naina">
+    <td><input type="checkbox"  value="{{y.productId}}" ng-checked="y.isRowSelected" ng-click="selection(y.productId)" /></td>
+		<td>{{y.productId}}</td>
+		<td>{{y.name}}</td>
+		<td>{{y.price}}</td>
+		<!--<td ng-bind="naina.name"></td>
+		<td ng-bind="naina.price"></td>-->
+	</tr>
+	</table>
+	<form>
+		<input type="button" name="Remove from cart" value="Remove from cart" ng-click="delete()">
+		<input type="button" name="Logout" value="Logout" ng-click="logout()">
+	</form>
+	<p><input type="button" name="Profile Page" value="User Profile" ng-click="profiles()"></p>
+	<table>
+		<tr>
+	<th>Name</th>
+	<td>{{profileuser.name}}</td></tr>
+	<tr>
+	<th>Email</th>
+	<td>{{profileuser.email}}</td></tr>
+	<tr>
+	<th>UserName</th>
+	<td>{{profileuser.username}}</td></tr>
+	<tr>
+	<th>Phone No.</th>
+	<td>{{profileuser.phoneNo}}</td>
+	</tr>
+
+	</table>
+	
+</body>
+</html>
