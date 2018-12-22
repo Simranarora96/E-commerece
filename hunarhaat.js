@@ -464,7 +464,7 @@ app.get('/user/:username', function(req, res){
  /*
     async.waterfall([
          function(next){
-           console.log("gand marale");
+           console.log("check");
   console.log(req.params.username); 
   
           Person.findOne({username:req.params.username},function(err, response){
